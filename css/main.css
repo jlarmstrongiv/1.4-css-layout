@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/*General Styling*/
+* {
+  box-sizing: border-box;
+}
+/*body {
+  max-width: 1280px;
+}*/
+/*Nav*/
+.nav-row {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #000000;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.nav-row a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+}
+/* padding isn't consistent with children of display flex */
+/* https://stackoverflow.com/questions/23717953/padding-bottom-top-in-flexbox-layout, 2nd comment*/
+.nav-row a:first-child::after {
+  content: '';
+  display: block;
+  padding-bottom: 30px;
+  height: 0;
+}
+.nav-row a:first-child::before {
+  content: '';
+  display: block;
+  padding-top: 30px;
+  height: 0;
+}
+
+header {
+  background: #E7D2A6 url(../img/header-img.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  height: 600px;
+  text-align: center;
+  padding-top: 170px;
+}
+header h1 {
+  margin: 0;
+  font: bold 110px "Josefin Sans", sans-serif;
+}
+header h3 {
+  margin-top: -45px;
+  font: bold 60px "Dancing Script", cursive;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+/*Main*/
+main {
+  margin: -80px 62px 80px 62px;
+  background-color: #FEF9EC;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 1);
+}
+/*Clear Fix*/
+main:after,
+.meta:after,
+.item:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.entry-title,
+footer,
+.item {
+  clear: both;
+}
+/*Blog Layout*/
+.blog-row {
+  float: left;
+  max-width: 535px;
+  margin: 70px 0 0 135px;
+}
+.item {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #FFFFFF;
+  position: relative;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, .5);
+}
+.item:first-child {
+  margin-top: 0;
+}
+.item:last-child {
+  margin-bottom: 20px;
+}
+/*Aside Layout*/
+aside {
+  float: right;
+  max-width: 350px;
+  background-color: #EFEADF;
+  margin: 30px;
+  margin-left: 0;
+  padding: 20px;
+}
+.auth-pic {
+  background: #1A0500 url(../img/author.jpeg);
+  background-size: cover;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+/*Shared Typography*/
+aside h3,
+.item h4 {
+  font: bold 24px "Josefin Sans", sans-serif;
+  margin-bottom: 3px;
+}
+aside p,
+.item p {
+  font: 14px "Noto Serif", serif;
+  line-height: 200%;
+  margin: 0;
+}
+/*Blog Styling*/
+.icon-wrapper {
+  font-size: 20px;
+  color: #FFFFFF;
+  background-color: #EFEADF;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 auto;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+}
+.icon-wrapper i {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.meta {
+  font: 12px "Helvetica", sans-serif;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, .5);
+}
+.meta div {
+  display: inline-block;
+}
+.date {
+  float: left;
+}
+.category {
+  float: right;
+}
+.blog-img {
+  width: 250px;
+  height: 250px;
+  background-color: black;
+  float: right;
+  margin-left: 10px;
+  background-size: contain;
+}
+/*Blog Post Images*/
+#dino {
+  background: #FFFFFF url(../img/dino.jpg);
+}
+#xx {
+  background: #FFFFFF url(../img/xx.png);
+  background-size: 250px 250px;
+}
+#yhact-img {
+  background: #FFFFFF url(../img/yhact.jpg);
+}
+/*Author Styling*/
+aside h3 {
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+/*Footer*/
+footer {
+  font: 12px "Noto Serif", serif;
+  text-align: center;
+  padding: 12px;
+  text-transform: uppercase;
+  color: #FDFDFD;
+  background-color: #333333;
+}
